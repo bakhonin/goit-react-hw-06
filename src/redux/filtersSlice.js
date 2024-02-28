@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const filterSlice = createSlice({
+const filtersSlice = createSlice({
   name: 'filters',
   initialState: {
     name: '',
@@ -12,5 +12,6 @@ export const filterSlice = createSlice({
   },
 });
 
-export const { updateNameFilter } = filterSlice.actions;
-export const filterReducer = filterSlice.reducer;
+export const { updateNameFilter } = filtersSlice.actions;
+export const selectFilter = state => state.filters.name;
+export const filtersReducer = filtersSlice.reducer;
